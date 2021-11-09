@@ -10,6 +10,26 @@
       "sourceMaps": true, 
       "cwd": "${workspaceRoot}",  // 将工作目录设置为项目根目录
       "protocol": "inspector",    // 将节点调试协议设置为V8 Inspector模式
+    },
+    {
+      "name": "source",
+      "type": "node",
+      "request": "launch",
+      "args": ["${workspaceRoot}/src/source/index.js"],  // 当前文件
+      "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],  // --nolazy: 告诉v8引擎提前编译代码，以便断点正常工作 -r ts-node/register: 这可以确保在执行代码之前加载ts-node
+      "sourceMaps": true, 
+      "cwd": "${workspaceRoot}",  // 将工作目录设置为项目根目录
+      "protocol": "inspector",    // 将节点调试协议设置为V8 Inspector模式
+    },
+    {
+      "name": "compose",
+      "type": "node",
+      "request": "launch",
+      "args": ["${workspaceRoot}/src/source/compose.js"],  // 当前文件
+      "runtimeArgs": ["--nolazy", "-r", "ts-node/register"],  // --nolazy: 告诉v8引擎提前编译代码，以便断点正常工作 -r ts-node/register: 这可以确保在执行代码之前加载ts-node
+      "sourceMaps": true, 
+      "cwd": "${workspaceRoot}",  // 将工作目录设置为项目根目录
+      "protocol": "inspector",    // 将节点调试协议设置为V8 Inspector模式
     }
   ]
 }
