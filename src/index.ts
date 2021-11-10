@@ -1,74 +1,57 @@
 import fs from "fs";
 import { DefaultContext, Next } from "koa";
 const path = require("path");
-// const Router = require("koa-router");
+const Router = require("koa-router");
 const Koa = require('koa')
+
 const app = new Koa();
-// let home =  new Router();
-// let router = new Router()
-// home.get('/', async (ctx: DefaultContext) => {
-//   let html = `
-//   <ul>
-//     <li><a href="/page/helloworld">/page/helloworld</a></li>
-//     <li><a href="/page/404">/page/404</a></li>
-//   </ul>
-// `
-// ctx.body = html
+// const router = new Router();
+// router.get('/', (ctx: DefaultContext, next: Next) => {
+//   console.log(111)
+//   ctx.body = 'hello world'
+// }).get('/user', (ctx:DefaultContext, next:Next) => {
+//   ctx.body = 'user'
+// }).get('/user/:id', (ctx:DefaultContext, next:Next) => {
+//   console.log(ctx._matchedRoute)
+//   ctx.body = '1'
 // })
-// router.use('/', home.routes(), home.allowedMethods())
-// app.use(router.routes()).use(router.allowedMethods())
-// app.listen(3001, () => {
-//   console.log('[demo] route-use-middleware is starting at port 3000')
-// })
-app.use(async function (ctx: DefaultContext, next: Next) {
-  console.log(ctx.method, ctx.header.host + ctx.url)
-  // await next()
+// router.get('user', '/users/:id', (ctx:DefaultContext, next:Next) => {
+//   console.log('sss')
+//   ctx.body = '2'
+//  });
+//  router.get('/users:id', (ctx:DefaultContext, next:Next) => {
+//    return User.findById(ctx.params.id).then(user => {
+//      ctx.user = user;
+//      next()
+//    })
+//  })
+// router.url('user', 3);
+
+// var forums = new Router();
+// var posts = new Router();
+// posts.get('/', (ctx:DefaultContext, next:Next) => {})
+// posts.get('/:pid', (ctx:DefaultContext, next:Next) => {})
+// console.log(posts.routes())
+// forums.use('/forums/:fid/posts', posts.routes(), posts.allowedMethods())
+
+// app.use(router.routes())
+//   .use(router.allowedMethods())
+let home = new Router();
+home.get('/b', async (ctx:DefaultContext, next:Next) =>{
+  let html = 'hello word'
+  ctx.body = html
 })
-// app.use(async (ctx:DefaultContext) => {
-//   const url = ctx.request.url;
-//   let html = await route(url)
-//   console.log(html)
-//   ctx.body = html
-// })
-app.use(async (ctx: DefaultContext, next: Next) => {
-  console.log(222)
-  const start = Date.now();
-  await next();
-  const ms = Date.now() - start;
-  console.log(`${ctx.method} ${ctx.url} - ${ms}ms`);
+let page = new Router();
+page.get('/', async (ctx:DefaultContext, next:Next) =>{
+  ctx.body = '404 page'
+}).get('/helloword', async (ctx:DefaultContext, next:Next) =>{
+  ctx.body = 'hello page'
 })
-// function render (page: string) {
-//   return new Promise((resolve, reject) => {
-//     let viewUrl = path.join(__dirname,`./view/${page}`)
-//     fs.readFile(viewUrl, {encoding: 'utf8'}, (err, data) => {
-//       if (err) {
-//         reject(err);
-//       } else {
-//         resolve(data);
-//       }
-//     })
-//   })
-// }
-// async function route(url: string) {
-//   let view = '404.html'
-//   switch(url) {
-//     case '/':
-//       view = 'index.html'
-//       break;
-//     case '/index':
-//       view = 'index.html'
-//       break;
-//     case 'todo':
-//       view = 'todo.html'
-//       break;
-//     case '/404':
-//       view = '404.html'
-//       break;
-//     default:
-//       break;        
-//   }
-//   let html = await render(view)
-//   return html;
-// }
+let router = new Router();
+router.redirect('/a/b', '/page/helloword')
+router.use('/a', home.routes(), home.allowedMethods());
+router.use('/page', page.routes(), page.allowedMethods())
+app.use(router.routes())
+    .use(router.allowedMethods())
 app.listen(3000)
 console.log('starting at port 3000')
