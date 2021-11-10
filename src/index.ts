@@ -8,14 +8,20 @@ const koaStatic = require('koa-static')
 
 const app = new Koa();
 app.use(bodyParser())
-// 静态资源目录对于相对入口文件index.js的路径
-const staticPath = './static'
-
-app.use(koaStatic(
-  path.join( __dirname,  staticPath)
-))
-app.use( async ( ctx:DefaultContext ) => {
-  ctx.body = 'hello world'
+app.use(async (ctx:DefaultContext) => {
+  if (ctx.url === '/index') {
+    ctx.cookies.set('cid', 'hello world', {
+      domain: 'localhost',
+      path: 'index',
+      maxAge: 10*60*10000,
+      expires: new Date('2021-12-01'),
+      httpOnly: false,
+      overwrite: false
+    });
+    ctx.body = 'cookie is ok'
+  } else {
+    ctx.body = 'hello word'
+  }
 })
 
 app.listen(3000)
