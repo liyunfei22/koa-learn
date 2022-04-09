@@ -2,8 +2,8 @@
 
 ## 环境搭建
 
-开发依赖：[ts-node](https://typestrong.org/ts-node/)、[nodemon](https://www.npmjs.com/package/nodemon)、[tsconfig-paths
-](https://www.npmjs.com/package/tsconfig-paths)
+开发依赖：[ts-node](https://typestrong.org/ts-node/)、[nodemon](https://www.npmjs.com/package/nodemon)、
+[tsconfig-paths](https://www.npmjs.com/package/tsconfig-paths)
 
 ts-node -r : Require a node module before execution
 
@@ -22,7 +22,17 @@ Typescript 默认模仿模块的 Node.js 运行时解析策略。但它也允许
 ## 参考
 
 [wiki](https://github.com/koajs/koa/wiki)
-[typeScript + Koa](https://www.keysking.com/index.php/archives/4/)
 
-[koa-note](https://chenshenhai.github.io/koa2-note/note/route/koa-router.html)
+[创建可调试,热加载的TypeScript+Koa工程](https://www.keysking.com/index.php/archives/4/)
+
+[《Koa2进阶学习笔记》](https://chenshenhai.github.io/koa2-note/)
+
+[koa-router-api](https://github.com/koajs/router/blob/master/API.md)
+
 [debug](https://www.npmjs.com/package/debug)
+
+[IT笔录学习node原生模块](https://itbilu.com/nodejs)
+
+[很牛的node学习文档](https://www.nodejs.red/#/README)
+
+[Koa源码解析，带你实现一个迷你版的Koa](https://cloud.tencent.com/developer/article/1684864)

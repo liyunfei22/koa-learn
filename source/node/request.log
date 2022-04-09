@@ -1,0 +1,6 @@
+method=GET
+url=/favicon.ico
+headers=
+{"host":"localhost:6969","connection":"keep-alive","sec-ch-ua":"\" Not A;Brand\";v=\"99\", \"Chromium\";v=\"99\", \"Google Chrome\";v=\"99\"","sec-ch-ua-mobile":"?0","user-agent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.84 Safari/537.36","sec-ch-ua-platform":"\"macOS\"","accept":"image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8","sec-fetch-site":"same-origin","sec-fetch-mode":"no-cors","sec-fetch-dest":"image","referer":"http://localhost:6969/","accept-encoding":"gzip, deflate, br","accept-language":"zh-CN,zh;q=0.9","cookie":"dj_cityid=1; dj_cityname=%E5%8C%97%E4%BA%AC; dj_location=116.416496039497%2C40.038100314671; dj_location_detail=%E5%8C%97%E4%BA%AC%E6%96%87%E5%8C%96%E5%88%9B%E6%84%8F%E5%A4%A7%E5%8E%A6; dj_addr_id=; comm_cityid=1; comm_cityname=%u5317%u4EAC"}
+
+httpVersion=1.1
