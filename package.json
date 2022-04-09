@@ -10,12 +10,15 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/koa__router": "^8.0.11",
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.11.0",
     "typescript": "^4.4.4"
   },
   "dependencies": {
+    "@koa/router": "^10.1.1",
     "@types/koa": "^2.13.4",
+    "debug": "^4.3.4",
     "koa": "^2.13.4"
   }
 }
