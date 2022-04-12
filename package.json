@@ -12,6 +12,7 @@
   "devDependencies": {
     "@types/koa-bodyparser": "^4.3.7",
     "@types/koa__router": "^8.0.11",
+    "@types/mysql": "^2.15.21",
     "ts-node": "^10.4.0",
     "tsconfig-paths": "^3.11.0",
     "typescript": "^4.4.4"
@@ -21,6 +22,7 @@
     "@types/koa": "^2.13.4",
     "debug": "^4.3.4",
     "koa": "^2.13.4",
-    "koa-bodyparser": "^4.3.0"
+    "koa-bodyparser": "^4.3.0",
+    "mysql": "^2.18.1"
   }
 }

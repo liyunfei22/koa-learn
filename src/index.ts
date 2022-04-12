@@ -3,6 +3,12 @@ import Koa from 'koa'
 import Router from '@koa/router'
 import logger from './logger'
 import bodyParser from 'koa-bodyparser'
+import query from './async-db'
+async function getEmp() {
+  let sql:string = 'SELECT * FROM emp'
+  let dataList = await query(sql)
+  return dataList
+}
 const app = new Koa ();
 const router = new Router();
 app.use(bodyParser())
@@ -12,8 +18,9 @@ router
     ctx.body = query
   })
   .post('/user', async (ctx) => {
-    console.log(ctx.request.body)
-    ctx.body = ctx.request.body;
+    const data = await getEmp()
+    console.log(data)
+    ctx.body = data
   })
 app
   .use(router.routes())
